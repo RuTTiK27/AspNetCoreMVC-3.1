@@ -1,0 +1,83 @@
+﻿@using RuTTiK27.BookStore.Models
+@model BookModel
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h3 class="display-4">Book Details</h3>
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="~/Images/Boooks/nature-magazine-coffee-cup-lavender_23-2148311910.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="~/Images/Boooks/stack-books-library-desk_23-2147845946.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="~/Images/Boooks/top-view-bookss-with-pen-flowers_23-2148568929.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-6">
+            <h2 class="display-4">@Model.Title</h2>
+            <span class="text-primary">By: @Model.Author</span>
+            <br />
+            <p>@Model.Description</p>
+            <button class="btn btn-outline-primary">Read Now</button>
+
+            <hr />
+
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span class="fw-bold">Category- </span>@Model.Category
+                </li>
+                <li class="list-group-item">
+                    <span class="fw-bold">Total pages- </span>@Model.TotalPages
+                </li>
+                <li class="list-group-item">
+                    <span class="fw-bold">Language- </span>@Model.Language
+                </li>
+            </ul>
+        </div>
+    
+    </div>
+
+    <div class="row my-5">
+        @for (int i = 0; i < 5; i++)
+        {
+
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="bd-placeholder-img card-img-top" width="100%" height="225"></svg>
+                <div class="card-body">
+                    <p class="card-text">
+                        This section will be used to display the short description of book
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a href="#" class="btn btn-sm btn-outline-secondary">view details</a>
+                        </div>
+                        <small class="text-muted">Author Name</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+
+</div>
+
+
